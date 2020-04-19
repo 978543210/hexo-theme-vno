@@ -11,7 +11,6 @@
     <div class="content-wrapper">
         <div class="content-wrapper__inner">
             <%- body %>
-
             <%- partial('_partial/footer', {}) %>
         </div>
     </div>
@@ -19,6 +18,13 @@
     <%- js("https://code.jquery.com/jquery-2.1.4.min.js") %>
     <%- js("js/main.js") %>
 
-    <%- partial('_partial/google_analytics') %>
+    <% if (theme.mermaid.enable) { %>
+        <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
+        <script>
+          if (window.mermaid) {
+            mermaid.initialize({theme: 'forest'});
+          }
+        </script>
+      <% } %>
 </body>
 </html>

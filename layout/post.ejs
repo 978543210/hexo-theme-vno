@@ -10,9 +10,7 @@
   <section class="post">
     <%- page.content%>
   </section>
-
+  <%- partial('_partial/read-more', {}) %>
+  <%- partial('_partial/comments', {}) %>
 </article>
 
-<%- partial('_partial/read-more', {}) %>
-
-<%- partial('_partial/comments',{}) %>
